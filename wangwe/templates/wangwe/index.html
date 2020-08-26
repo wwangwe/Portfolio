@@ -117,47 +117,30 @@
           <h2>Portfolio</h2>
           <p>Here are some of my personal projects!</p>
           <blockquote class=" text-left text-muted">
-            <p class="mb-0">"Show me what you can do; don't tell me what you can do."</p>
-            <cite>&ndash;John Wooden</cite>
+            <p class="mb-0">"Show me what you can do; don't tell me what you can do." <cite>&ndash;John Wooden</cite>
+            </p>
           </blockquote>
-          <div class="card-deck">
-            <div class="card">
-              <img class="card-img-top" src="{% static 'img/bg/bg2.jpg' %}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Project One</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural
-                  lead-in to additional
-                  content. This content is a little bit longer.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Machine Learning</small>
-              </div>
+          {% for project in projects %}
+          <div class="card">
+            <div class="card-header">
+              <small class="text-muted float-right">{{project.date|date:"M Y"}}</small>
+              <h5 class="card-title">{{project.title}}</h5>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="{% static 'img/bg/bg2.jpg' %}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Project Two</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to
-                  additional content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Django</small>
-              </div>
+            <img class="card-img-top" src="{{project.image.url}}" alt="An image of {{project.title}}">
+            <div class="card-body">
+              <p class="card-text">{{project.description}}</p>
+              <small>
+                <a href="{{project.source}}" target="_blank" class="text-info">Source Code</a>
+              </small>
+              <small>
+                <a href="{{project.deploy}}" target="_blank" class="text-info float-right">Deployed here</a>
+              </small>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="{% static 'img/bg/bg2.jpg' %}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Project N</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural
-                  lead-in to additional
-                  content. This card has even longer content than the first to show that equal height
-                  action.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Data Science</small>
-              </div>
+            <div class="card-footer text-center">
+              <small class="text-muted">{{project.technology}}</small>
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -170,10 +153,10 @@
           <div>
             <p>You can contact me directly via email or call.</p>
             <small>
-              <a href="https://wangwetymothy@gmail.com" target="_blank">wangwetymothy@gmail.com</a>
+              <a href="https://wangwetymothy@gmail.com" target="_blank" class="text-info">wangwetymothy@gmail.com</a>
             </small>
             <small class="float-right">
-              <a href="tel:+254706659609" target="_blank">+254 706 659609</a>
+              <a href="tel:+254706659609" target="_blank" class="text-info">+254 706 659609</a>
             </small>
             <p><br> Or you could leave me a message in this little form down here!</p>
           </div>
