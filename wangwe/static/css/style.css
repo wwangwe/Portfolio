@@ -52,13 +52,6 @@ section {
 .fa {
   padding: 0px 15px 0px;
   font-size: large;
-  transition: font-size .75s linear;
-}
-
-.fa:hover {
-  text-decoration: none;
-  font-size: large;
-  transition: font-size .5s linear;
 }
 
 .fa-bullseye {
