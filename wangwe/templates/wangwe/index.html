@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Wangwe &#8226; Portfolio </title>
+  <title> Portfolio &#8226; Wangwe </title>
 
   <!-- Fontawesome CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -35,11 +35,11 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Wangwe</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-bullseye">&#8226;</i>
       </button>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Wangwe</a>
       <div class="collapse navbar-collapse navbar-light bg-light" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -129,14 +129,18 @@
             <img class="card-img-top" src="{{project.image.url}}" alt="An image of {{project.title}}">
             <div class="card-body">
               <p class="card-text">{{project.description}}</p>
+              {% if project.source %}
               <small>
                 <a href="{{project.source}}" target="_blank" class="text-info">Source Code</a>
               </small>
+              {% endif %}
+              {% if project.deploy %}
               <small>
                 <a href="{{project.deploy}}" target="_blank" class="text-info float-right">Deployed here</a>
               </small>
+              {% endif %}
             </div>
-            <div class="card-footer text-center">
+            <div class="card-footer text-center bg-light">
               <small class="text-muted">{{project.technology}}</small>
             </div>
           </div>
