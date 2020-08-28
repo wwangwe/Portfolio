@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;700&display=swap');
+
+body,
+html {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+blockquote {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 12px;
+}
+
+header {
+  padding: 165px 0 200px;
+  background-image: url('../img/bg/bg2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.navbar {
+  height: 80px;
+}
+
+.navbar-brand {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 25px;
+  text-decoration: overline;
+}
+
+.navbar-brand:hover {
+  text-decoration: overline;
+}
+
+.nav-item {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 500;
+}
+.active {
+  font-weight: 600;
+}
+
+/* .navbar.scrolled {
+  background-color: rgba(255, 255, 255, .5) !important;
+  transition: background-color 2s linear;
+} */
+
+.fa {
+  padding: 0px 15px 0px;
+  font-size: large;
+}
+
+.fa-bullseye {
+  color: #000000;
+  font-size: xx-large !important;
+  transition: font-size 1s linear;
+}
+
+@keyframes zoominoutsinglefeatured {
+  0% {
+      transform: scale(1,1);
+  }
+  50% {
+      transform: scale(1.2, 1.2);
+  }
+}
+
+.fa-bullseye {
+animation: zoominoutsinglefeatured 1s infinite ;
+}
+
+.fa-envelope {
+  color: #ea4335;
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-phone {
+  color: #1ab7ea;
+}
+
+.fa-linkedin {
+  color: #007bb5;
+}
+
+.fa-medium {
+  color: #00ab6b;
+}
+
+.fa-github {
+  color: #211F1F;
+}
+
+.fa-stack-overflow {
+  color: #ef8236;
+}
+
+.fa-twitter {
+  color: #1da1f2;
+}
+
+.fa-instagram {
+  color: #c32aa3;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+/* .card:hover {
+  transform: scale(.99);
+  opacity: .9;
+  transition: transform .5s linear;
+} */
+
+small a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+button.navbar-toggler {
+  border: none;
+}
+
+button.navbar-toggler:focus {
+  outline: none !important;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 100px 0 365px;
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 79px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+  }
+
+  .navbar-collapse.collapsing {
+    height: auto;
+    -webkit-transition: left 0.5s ease;
+    -o-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+    left: -100%;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+    -webkit-transition: left 0.15s ease-in;
+    -o-transition: left 0.15s ease-in;
+    -moz-transition: left 0.15s ease-in;
+    transition: left 0.15s ease-in;
+  }
+}
