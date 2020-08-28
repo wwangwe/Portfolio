@@ -12,7 +12,7 @@ class Feedback(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='projects/', blank=False)
+    image = models.ImageField(upload_to='projects/%Y/%m/', blank=False)
     description = models.TextField(blank=False)
     date = models.DateTimeField()
     technology = models.CharField(max_length=30)
