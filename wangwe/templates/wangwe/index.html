@@ -136,14 +136,13 @@
             <p class="mb-0">"Show me what you can do; don't tell me what you can do." <cite>&ndash;John Wooden</cite>
             </p>
           </blockquote>
-          {% if project %}
           {% for project in projects %}
           <div class="card">
             <div class="card-header">
               <small class="text-muted float-right">{{project.date|date:"M Y"}}</small>
               <h5 class="card-title">{{project.title}}</h5>
             </div>
-            <img class="card-img-top" src="{{project.image.url}}" alt="An image of {{project.title}}">
+            <img src="{{project.image.url}}" alt="An image of {{project.title}}" class="card-img-top">
             <div class="card-body">
               <p class="card-text">{{project.description}}</p>
               {% if project.source %}
@@ -161,8 +160,8 @@
               <small class="text-muted">{{project.technology}}</small>
             </div>
           </div>
+          <br>
           {% endfor %}
-          {% endif %}
         </div>
       </div>
     </div>

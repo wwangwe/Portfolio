@@ -9,10 +9,11 @@ def index(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(
-                request,
-                'Thak you for leaving a message. I will get back to you as soon as possible!'
-                )
+            # messages.success(
+            #     request,
+            #     'Thak you for leaving a message. I will get back to you as soon as possible!'
+            #     )
+            return redirect('wangwe:home')
         else:
             return redirect('wangwe:home')
     else:
