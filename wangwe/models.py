@@ -11,11 +11,11 @@ class Feedback(models.Model):
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=60)
     image = models.ImageField(upload_to='projects/%Y/%m/', blank=False)
     description = models.TextField(blank=False)
-    date = models.DateTimeField(auto_now_add=True)
-    technology = models.CharField(max_length=30)
+    date = models.DateTimeField()
+    technology = models.CharField(max_length=60)
     deploy = models.URLField(blank=True)
     source = models.URLField(blank=True)
     status = models.CharField(
