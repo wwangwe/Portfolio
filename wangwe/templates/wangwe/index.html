@@ -10,10 +10,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Portfolio &#8226; Wangwe </title>
+  <title> Personal Portfolio &#8226; Wangwe </title>
 
   <!-- Fontawesome CDN -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/b1eb41e9a4.js" crossorigin="anonymous"></script>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -33,7 +33,7 @@
 
 {% for message in messages %}
 <div class="alert alert-success text-center">
-    {{message}}
+  {{message}}
 </div>
 {% endfor %}
 
@@ -68,13 +68,11 @@
   </nav>
 
   <header class="text-white">
-
-
-{% for message in messages %}
-<div class="alert alert-success text-center">
-    {{message}}
-</div>
-{% endfor %}
+    {% for message in messages %}
+    <div class="alert alert-success text-center">
+      {{message}}
+    </div>
+    {% endfor %}
     <div class="container text-center">
       <img src="{% static 'img/hi.gif' %}" alt="" class="img-fluid rounded" style="height: 200px; width: 200px;"
         draggable="false">
@@ -84,6 +82,10 @@
       <span>I Lead &#8226; I Code &#8226; I Serve &#8226; I Love</span>
     </div>
   </header>
+
+  <div class="dark-mode-div">
+    <button class="btn btn-dark-mode"><i onclick="darkmode(this)" class="fas fa-moon"></i> </button>
+  </div>
 
   <section id="about" class="">
     <div class="container">
@@ -174,7 +176,7 @@
           <div>
             <p>You can contact me directly via email or call.</p>
             <small>
-              <a href="https://wangwetymothy@gmail.com" target="_blank" class="text-info">wangwetymothy@gmail.com</a>
+              <a href="mailto:wangwetymothy@gmail.com" target="_blank" class="text-info">wangwetymothy@gmail.com</a>
             </small>
             <small class="float-right">
               <a href="tel:+254706659609" target="_blank" class="text-info">+254 706 659609</a>
@@ -228,7 +230,7 @@
             <i class="fa fa-linkedin"></i>
           </a>
           <a href="https://medium.com/@wangwetymothy" target="_blank" rel="noopener noreferrer">
-            <i class="fa fa-medium"></i>
+            <i class="fab fa-medium-m"></i>
           </a>
           <a href="https://www.github.com/wwangwe" target="_blank" rel="noopener noreferrer">
             <i class="fa fa-github"></i>
