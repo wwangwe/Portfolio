@@ -28,16 +28,28 @@
 
 })(jQuery); // End of use strict
 
-// $(function () {
-//   $(document).scroll(function () {
-//     var $nav = $(".navbar");
-//     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height() + 300);
-// 	});
-// });
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".navbar");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height() + 300);
+  });
+});
 
 // Dark-Mode
 
 function darkmode(x) {
+  //toggle between icons
   document.body.classList.toggle('dark-mode');
   x.classList.toggle('fa-sun');
+  x.classList.toggle('fa-spin');
+
+  // navigation bar
+  var nav = document.getElementById('mainNav');
+  nav.classList.toggle('navbar-dark');
+  nav.classList.toggle('bg-dark');
+
+  var navbar = document.getElementById('navbarResponsive');
+  navbar.classList.toggle('bg-dark');
+
+  // images
 }
