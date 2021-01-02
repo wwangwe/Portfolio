@@ -25,3 +25,6 @@ def index(request):
     }
 
     return render(request, 'wangwe/index.html', context)
+
+def resume(request):
+    return render(request, 'wangwe/resume.html')
