@@ -51,10 +51,10 @@
       <div class="collapse navbar-collapse navbar-light bg-light" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="{% url 'wangwe:resume' %}" target="_blank">Resume</a>
@@ -88,6 +88,47 @@
       <i onclick="darkmode(this)" class="fas fa-moon"></i>
     </button>
   </div>
+
+  <section id="portfolio" class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Portfolio</h2>
+          <p>Here are some of my personal projects!</p>
+          <blockquote class=" text-left text-muted">
+            <p class="mb-0">"Show me what you can do; don't tell me what you can do." <cite>&ndash;John Wooden</cite>
+            </p>
+          </blockquote>
+          {% for project in projects %}
+          <div class="card bg-transparent border-dark" id="card">
+            <div class="card-header">
+              <small class="text-muted float-right">{{project.date|date:"M Y"}}</small>
+              <h5 class="card-title">{{project.title}}</h5>
+            </div>
+            <img src="{{project.image.url}}" alt="An image of {{project.title}}" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text">{{project.description}}</p>
+              {% if project.source %}
+              <small>
+                <a href="{{project.source}}" target="_blank" class="text-info">Source Code</a>
+              </small>
+              {% endif %}
+              {% if project.deploy %}
+              <small>
+                <a href="{{project.deploy}}" target="_blank" class="text-info float-right">Deployed here</a>
+              </small>
+              {% endif %}
+            </div>
+            <div class="card-footer text-center">
+              <small class="text-muted">{{project.technology}}</small>
+            </div>
+          </div>
+          <br>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="about" class="">
     <div class="container">
@@ -130,46 +171,6 @@
     </div>
   </section>
 
-  <section id="portfolio" class="">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h2>Portfolio</h2>
-          <p>Here are some of my personal projects!</p>
-          <blockquote class=" text-left text-muted">
-            <p class="mb-0">"Show me what you can do; don't tell me what you can do." <cite>&ndash;John Wooden</cite>
-            </p>
-          </blockquote>
-          {% for project in projects %}
-          <div class="card bg-transparent border-dark" id="card">
-            <div class="card-header">
-              <small class="text-muted float-right">{{project.date|date:"M Y"}}</small>
-              <h5 class="card-title">{{project.title}}</h5>
-            </div>
-            <img src="{{project.image.url}}" alt="An image of {{project.title}}" class="card-img-top">
-            <div class="card-body">
-              <p class="card-text">{{project.description}}</p>
-              {% if project.source %}
-              <small>
-                <a href="{{project.source}}" target="_blank" class="text-info">Source Code</a>
-              </small>
-              {% endif %}
-              {% if project.deploy %}
-              <small>
-                <a href="{{project.deploy}}" target="_blank" class="text-info float-right">Deployed here</a>
-              </small>
-              {% endif %}
-            </div>
-            <div class="card-footer text-center">
-              <small class="text-muted">{{project.technology}}</small>
-            </div>
-          </div>
-          <br>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
   <section id="contact" class="">
     <div class="container">
       <div class="row">
@@ -223,6 +224,7 @@
       </div>
     </div>
   </section>
+
   <div class="container ">
     <div class="row">
       <div class="col-lg-8 mx-auto">
@@ -250,6 +252,7 @@
       </div>
     </div>
   </div>
+
   <!-- Footer -->
   <footer class=" p-3">
     <div class="text-center text-muted">
